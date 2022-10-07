@@ -20,10 +20,11 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.OAS_30)
                 .apiInfo(apiInfo())
+                .useDefaultResponseMessages(false)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.swagger.demo.swaggerdemo"))
-                .apis(RequestHandlerSelectors.any()).paths(PathSelectors.any())
-
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
                 .build();
     }
 
